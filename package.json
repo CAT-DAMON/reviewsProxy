@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "express": "4.17.1",
+    "newrelic": "^6.13.2",
     "nodemon": "2.0.4",
     "path": "0.12.7"
   },
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/emmali98/hrr48-fec-proxy/issues"
   },
-  "homepage": "https://github.com/emmali98/hrr48-fec-proxy#readme"
+  "homepage": "https://github.com/emmali98/hrr48-fec-proxy#readme",
+  "devDependencies": {
+    "artillery": "^1.6.1"
+  }
 }
