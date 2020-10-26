@@ -1,0 +1,28 @@
+{
+  "config": {
+    "target": "http://54.241.142.50:3000",
+    "tls": {"rejectionUnauthorized": false},
+    "phases": [
+      {"duration": 10, "arrivalRate": 1, "name": "Warming Up"},
+      {"duration": 10, "arrivalRate": 10, "name": "Ramping to 100+"},
+      {"duration": 10, "arrivalRate": 10, "rampTo": 50, "name": "Ramping to 500"},
+      {"duration": 60, "arrivalRate": 50, "name": "Steady at 500"}
+    ],
+    "variables": {
+      "store": ["90000", "40,000", "95,000", "45,000", "99,000", "49,000"],
+      "item": ["10", "15", "32", "39", "53", "58", "60", "71", "83", "88", "92"]
+    }
+  },
+  "scenarios": [
+    {
+      "flow": [
+        {
+          "loop": [
+            {"get": {"url": "/listing/{{store}}/{{item}}"}}
+          ],
+          "count": 10
+        }
+      ]
+    }
+  ]
+}
